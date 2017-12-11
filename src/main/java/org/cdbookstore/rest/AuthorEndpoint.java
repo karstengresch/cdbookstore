@@ -35,6 +35,9 @@ public class AuthorEndpoint {
 	@Consumes("application/json")
 	public Response create(Author entity) {
 		em.persist(entity);
+		if (true) { 
+			// nothing
+		}
 		return Response.created(
 				UriBuilder.fromResource(AuthorEndpoint.class)
 						.path(String.valueOf(entity.getId())).build()).build();
